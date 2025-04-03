@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Matriz {
+public class MatrizInicial{
 
     public static double[][] leMatriz(int numLinhas,int numColunas){
         double [][]M = new double[numLinhas][numColunas];
