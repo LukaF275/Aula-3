@@ -43,7 +43,8 @@ class Conta_Corrente {
     }
 
     public void transferir (Conta_Corrente conta, double valor){
-        conta.depositar(valor);
+        this.saldo -= valor;
+        conta.saldo += valor;
     }
 
     public void extrato(){
@@ -57,6 +58,15 @@ class Conta_Corrente {
 
     public Poupanca (String nome, int cpf, int rg, String endereco, int agencia, int no_conta, double saldo){
         super(nome, cpf, rg, endereco, agencia, no_conta, saldo);
+    }
+
+    public void transferir (Conta_Corrente conta, double valor){
+        if (conta.nome != this.nome) {
+            System.out.println("Transação não autorizada");
+        }else{
+            this.saldo -= valor;
+            conta.saldo += valor;
+        }
     }
     
 }
